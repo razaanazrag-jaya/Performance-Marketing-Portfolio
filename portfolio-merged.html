@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Razaan Azra Gunawan - Performance Marketing Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #6B4DB8;
+            --accent: #FF8C42;
+            --light: #f5f5f5;
+            --gray: #666;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: #fff;
+            color: var(--primary);
+            line-height: 1.6;
+        }
+
+        /* HEADER & NAV */
+        header {
+            position: sticky;
+            top: 0;
+            background: white;
+            border-bottom: 1px solid #eee;
+            z-index: 100;
+            padding: 20px 0;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        nav a {
+            margin-left: 40px;
+            font-size: 14px;
+            text-decoration: none;
+            color: var(--gray);
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        /* HERO */
+        .hero {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 120px 40px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        /* ABOUT ME */
+        .about {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 40px;
+            border-top: 1px solid #eee;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 60px;
+            color: var(--primary);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .about-text {
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .about-text strong {
+            color: var(--primary);
+        }
+
+        .star-section {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .star-section:nth-child(even) {
+            border-left-color: var(--accent);
+        }
+
+        .star-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--secondary);
+            margin-bottom: 8px;
+        }
+
+        .star-section:nth-child(even) .star-label {
+            color: var(--accent);
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding-top: 30px;
+            border-top: 2px solid #eee;
+            margin-top: 30px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 42px;
+            font-weight: 900;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray);
+            margin-top: 8px;
+            font-weight: 600;
+        }
+
+        /* CAMPAIGNS */
+        .campaigns {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 40px;
+            border-top: 1px solid #eee;
+        }
+
+        .campaigns-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 60px;
+            margin-top: 60px;
+        }
+
+        .campaign-item {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .campaign-header {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            padding: 40px;
+            border-radius: 8px;
+            color: white;
+            position: sticky;
+            top: 100px;
+        }
+
+        .campaign-number {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            opacity: 0.9;
+            margin-bottom: 12px;
+        }
+
+        .campaign-title {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+
+        .campaign-period {
+            font-size: 14px;
+            opacity: 0.85;
+            margin-bottom: 30px;
+        }
+
+        .campaign-metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-value {
+            display: block;
+            font-size: 28px;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .metric-key {
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.85;
+            margin-top: 6px;
+        }
+
+        .campaign-details h3 {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .campaign-overview {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--gray);
+            margin-bottom: 40px;
+            padding: 25px;
+            background: var(--light);
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .learning-section {
+            margin-bottom: 35px;
+        }
+
+        .learning-title {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: white;
+            background: var(--primary);
+            padding: 8px 16px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .learning-content {
+            display: grid;
+            gap: 20px;
+        }
+
+        .learning-item {
+            padding: 25px;
+            background: white;
+            border-radius: 8px;
+            border: 2px solid #eee;
+        }
+
+        .learning-item.positive {
+            border-color: #10B981;
+            background: #F0FDF4;
+        }
+
+        .learning-item.negative {
+            border-color: #EF4444;
+            background: #FEF2F2;
+        }
+
+        .learning-item-label {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .learning-item-text {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--gray);
+        }
+
+        /* BASELINE SECTION */
+        .baseline {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            background: #FEF3E2;
+            border-top: 4px solid var(--accent);
+            border-bottom: 4px solid var(--accent);
+        }
+
+        .baseline h3 {
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .baseline p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .baseline-metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .baseline-metric {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .baseline-metric-value {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .baseline-metric-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray);
+            margin-top: 8px;
+            font-weight: 600;
+        }
+
+        /* INSIGHTS */
+        .insights {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 40px;
+            border-top: 1px solid #eee;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .insight-card {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .insight-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .insight-card ul {
+            list-style: none;
+        }
+
+        .insight-card li {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--gray);
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .insight-card li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .comparison-table {
+            width: 100%;
+            margin: 40px 0;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table th {
+            background: var(--primary);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            font-size: 15px;
+        }
+
+        .comparison-table tr:hover {
+            background: var(--light);
+        }
+
+        .positive-metric {
+            color: #10B981;
+            font-weight: 700;
+        }
+
+        .negative-metric {
+            color: #EF4444;
+            font-weight: 700;
+        }
+
+        /* METHODOLOGY */
+        .methodology {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 40px;
+            border-top: 1px solid #eee;
+        }
+
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .methodology-pillar {
+            padding: 40px;
+            background: var(--light);
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .methodology-pillar:nth-child(even) {
+            border-left-color: var(--accent);
+        }
+
+        .methodology-pillar h3 {
+            font-size: 20px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .pillar-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            font-size: 18px;
+            font-weight: 900;
+        }
+
+        .pillar-icon.alt {
+            background: var(--accent);
+        }
+
+        .methodology-pillar p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--gray);
+        }
+
+        /* TOOLS */
+        .tools {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 40px;
+            border-top: 1px solid #eee;
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .tools-left h2 {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .tools-left p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--gray);
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .tool-item {
+            padding: 25px;
+            background: var(--light);
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--primary);
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .tool-item:hover {
+            border-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        .tool-item.alt {
+            background: white;
+            border: 2px solid var(--light);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 40px;
+            font-size: 14px;
+        }
+
+        /* PRINT STYLES */
+        @media print {
+            .campaign-item {
+                grid-template-columns: 1fr;
+                page-break-inside: avoid;
+                gap: 30px;
+            }
+
+            .campaign-header {
+                position: static;
+                margin-bottom: 20px;
+            }
+
+            .learning-section {
+                page-break-inside: avoid;
+            }
+
+            .comparison-table {
+                font-size: 12px;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 8px;
+            }
+
+            .insights-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .methodology-grid {
+                grid-template-columns: 1fr;
+            }
+
+            body {
+                font-size: 14px;
+            }
+
+            .campaign-details h3 {
+                font-size: 22px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .about-content,
+            .campaign-item,
+            .tools {
+                grid-template-columns: 1fr;
+            }
+
+            .campaign-header {
+                position: static;
+            }
+
+            .methodology-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tools-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .insights-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .baseline-metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-content">
+        <nav>
+            <a href="#about">About</a>
+            <a href="#campaigns">Campaigns</a>
+            <a href="#insights">Insights</a>
+            <a href="#methodology">Methodology</a>
+            <a href="#tools">Tools</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Muhammad Razaan Azra Gunawan</h1>
+    <p>Performance Marketing Portfolio</p>
+</section>
+
+<!-- ABOUT ME -->
+<section class="about" id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-content">
+        <div class="about-text">
+            <p><strong>CMO at SIMAKARA</strong>, an Indonesian edtech startup that achieved product-market fit in university entrance exam preparation (SNBT, SIMAK UI, TKA). I manage an 8-person marketing team and oversee comprehensive growth marketing including Meta Ads, Google Analytics 4, content strategy, and team leadership.</p>
+            
+            <p>Background: Physics degree from UI with a thesis on CNN for dental age estimation. I bring analytical thinking to marketing optimization and systematic experimentation.</p>
+            
+            <p>I scaled student acquisition from 40 to over 1,000 students through three major campaigns (Dec 2024 - Sep 2025), achieving exceptional performance metrics including up to 73x ROAS and a remarkable LTV:CAC ratio of 28.7:1.</p>
+            
+            <p><strong>Core philosophy:</strong> Learning compounds. Budget doesn't. Each campaign built on previous insights, proving that strategic optimization scales better than budget increases. 73% less budget drove better ROAS.</p>
+        </div>
+        
+        <div>
+            <div class="star-section">
+                <div class="star-label">Situation</div>
+                <strong>Inherited 6.05x ROAS baseline</strong> from previous marketing (Mar-Jul 2024). Took over as CMO with mandate to improve efficiency while scaling student acquisition for bootstrapped edtech startup.
+            </div>
+
+            <div class="star-section">
+                <div class="star-label">Task</div>
+                Launch three successive campaigns to test, scale, and optimize student acquisition. <strong>Constraints:</strong> tight budgets, need to prove marketing ROI to founders, zero prior paid ads experience.
+            </div>
+
+            <div class="star-section">
+                <div class="star-label">Action</div>
+                <strong>Campaign #1 (SKS):</strong> Tested everything, built baseline, learned feature-listing fails. <strong>Campaign #2 (SI SIMAK):</strong> Applied learnings at 3x budget, simplified structure, breakthrough with teaching demos. <strong>Campaign #3 (#FYP):</strong> Compounded learnings, intentional budget constraint, premium positioning, creative targeting.
+            </div>
+
+            <div class="star-section">
+                <div class="star-label">Result</div>
+                <strong>1,108% ROAS improvement</strong> (6.05x → 73x), <strong>72% CAC reduction</strong> (Rp 74k → Rp 21k), <strong>358% conversion rate improvement</strong> (baseline → 33%). Proved strategy scales better than budget: 73% less spend drove peak efficiency.
+            </div>
+
+            <div class="about-stats">
+                <div class="stat">
+                    <div class="stat-number">+1,108%</div>
+                    <div class="stat-label">ROAS Growth</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">-72%</div>
+                    <div class="stat-label">CAC Reduction</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BASELINE CONTEXT -->
+<div class="baseline">
+    <h3>📊 Baseline Context: Inherited Performance (Mar-Jul 2024)</h3>
+    <p>Before taking over as CMO, SIMAKARA ran marketing campaigns that established a baseline to beat. This context is critical for understanding the improvements achieved across the three campaigns below.</p>
+    
+    <div class="baseline-metrics">
+        <div class="baseline-metric">
+            <div class="baseline-metric-value">861</div>
+            <div class="baseline-metric-label">Students</div>
+        </div>
+        <div class="baseline-metric">
+            <div class="baseline-metric-value">63.8M</div>
+            <div class="baseline-metric-label">Budget (IDR)</div>
+        </div>
+        <div class="baseline-metric">
+            <div class="baseline-metric-value">6.05x</div>
+            <div class="baseline-metric-label">ROAS</div>
+        </div>
+        <div class="baseline-metric">
+            <div class="baseline-metric-value">74k</div>
+            <div class="baseline-metric-label">CAC (IDR)</div>
+        </div>
+    </div>
+</div>
+
+<!-- CAMPAIGNS -->
+<section class="campaigns" id="campaigns">
+    <h2 class="section-title">Campaign Portfolio</h2>
+
+    <div class="campaigns-grid">
+        
+        <!-- Campaign 1: SKS -->
+        <div class="campaign-item">
+            <div class="campaign-header">
+                <div class="campaign-number">Campaign 01</div>
+                <div class="campaign-title">SKS</div>
+                <div class="campaign-period">Dec 2024 - Mar 2025</div>
+                <div class="campaign-metrics">
+                    <div class="metric">
+                        <span class="metric-value">~100</span>
+                        <span class="metric-key">Students</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">7.05x</span>
+                        <span class="metric-key">ROAS</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">85k</span>
+                        <span class="metric-key">CAC</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">8.5M</span>
+                        <span class="metric-key">Budget</span>
+                    </div>
+                </div>
+            </div>
+            <div class="campaign-details">
+                <h3>Learning Phase: First Rodeo with Paid Ads</h3>
+                <div class="campaign-overview">
+                    First major campaign as CMO. Goal: 2,000 student enrollments by Dec 31st deadline. Reality: missed target significantly but gained critical learnings. Complex multi-campaign funnel, feature-listing creative, micro-segmented audiences. Result: 7.05x ROAS (slight improvement over 6.05x baseline), but proved paid marketing viability.
+                </div>
+
+                <div class="learning-section">
+                    <span class="learning-title">❌ What Failed</span>
+                    <div class="learning-content">
+                        <div class="learning-item negative">
+                            <div class="learning-item-label">Feature-Listing Creative</div>
+                            <div class="learning-item-text">Generic carousel posts listing product features performed terribly. <1% CTR. Students didn't care about features; they wanted solutions to problems.</div>
+                        </div>
+                        <div class="learning-item negative">
+                            <div class="learning-item-label">Complex Funnel Over-Engineering</div>
+                            <div class="learning-item-text">Built 10+ ad sets trying to segment micro-audiences. Result: split budgets too thin, Meta algorithm couldn't optimize effectively, high CPMs.</div>
+                        </div>
+                        <div class="learning-item negative">
+                            <div class="learning-item-label">Late Campaign Launch</div>
+                            <div class="learning-item-text">Launched too close to deadline (mid-Dec for Dec 31 goal). Not enough time to test, learn, and iterate. Deadline-driven audience behavior meant we missed peak enrollment window.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="learning-section">
+                    <span class="learning-title">✓ What Worked</span>
+                    <div class="learning-content">
+                        <div class="learning-item positive">
+                            <div class="learning-item-label">Proved Paid Ads Viability</div>
+                            <div class="learning-item-text">7.05x ROAS beat baseline (6.05x). Demonstrated that with optimization, paid marketing could be profitable for SIMAKARA.</div>
+                        </div>
+                        <div class="learning-item positive">
+                            <div class="learning-item-label">Audience Insights</div>
+                            <div class="learning-item-text">Learned target audience exhibits deadline-driven behavior. Students enroll close to program start dates. Need to launch campaigns earlier.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Campaign 2: SI SIMAK -->
+        <div class="campaign-item">
+            <div class="campaign-header">
+                <div class="campaign-number">Campaign 02</div>
+                <div class="campaign-title">SI SIMAK</div>
+                <div class="campaign-period">Apr - Jun 2025</div>
+                <div class="campaign-metrics">
+                    <div class="metric">
+                        <span class="metric-value">~600</span>
+                        <span class="metric-key">Students</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">13.27x</span>
+                        <span class="metric-key">ROAS</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">45k</span>
+                        <span class="metric-key">CAC</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">27.1M</span>
+                        <span class="metric-key">Budget</span>
+                    </div>
+                </div>
+            </div>
+            <div class="campaign-details">
+                <h3>Scaling: Apply Learnings & Improve Efficiency</h3>
+                <div class="campaign-overview">
+                    Scaled budget 3x (8.5M → 27.1M) and applied learnings from SKS. Shifted from complex funnels to broad targeting signals. Pivoted to solution-focused messaging addressing actual student pain points. CAC improved 47% (85k → 45k); ROAS improved 88% (7.05x → 13.27x).
+                </div>
+
+                <div class="learning-section">
+                    <span class="learning-title">❌ What Changed</span>
+                    <div class="learning-content">
+                        <div class="learning-item negative">
+                            <div class="learning-item-label">Simplified Targeting</div>
+                            <div class="learning-item-text">Abandoned micro-segmentation. Broad targeting signals + Meta's algorithm outperformed manual audience segmentation by 40%+. Less is more.</div>
+                        </div>
+                        <div class="learning-item negative">
+                            <div class="learning-item-label">Removed Feature Talk</div>
+                            <div class="learning-item-text">Stopped listing product features. Started addressing systemic problems (Indonesia's PISA rankings, exam stress) which built credibility without hard-sell.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="learning-section">
+                    <span class="learning-title">✓ Key Innovations</span>
+                    <div class="learning-content">
+                        <div class="learning-item positive">
+                            <div class="learning-item-label">Solution-Focused Messaging Framework</div>
+                            <div class="learning-item-text">New framework: Problem → Your Approach → Proof. Resonated significantly better. Students engaged because copy was about their problems, not our product.</div>
+                        </div>
+                        <div class="learning-item positive">
+                            <div class="learning-item-label">Authentic Teaching Demos</div>
+                            <div class="learning-item-text">Real tutor demonstration videos outperformed polished production by 300%+. Show > Tell. Relatability > Polish. Students wanted to see actual teaching quality.</div>
+                        </div>
+                        <div class="learning-item positive">
+                            <div class="learning-item-label">Broad > Complex</div>
+                            <div class="learning-item-text">Let Meta's algorithm handle optimization instead of manual segmentation. Cost per result dropped 47% despite larger budget—proof that strategy > budget.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Campaign 3: FYP -->
+        <div class="campaign-item">
+            <div class="campaign-header">
+                <div class="campaign-number">Campaign 03</div>
+                <div class="campaign-title">#FYP</div>
+                <div class="campaign-period">Aug - Sep 2025</div>
+                <div class="campaign-metrics">
+                    <div class="metric">
+                        <span class="metric-value">~350</span>
+                        <span class="metric-key">Students</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">73.07x</span>
+                        <span class="metric-key">ROAS</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">21k</span>
+                        <span class="metric-key">CAC</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">7.2M</span>
+                        <span class="metric-key">Budget</span>
+                    </div>
+                </div>
+            </div>
+            <div class="campaign-details">
+                <h3>Peak Efficiency: Prove Strategy > Budget</h3>
+                <div class="campaign-overview">
+                    REDUCED budget 73% vs Campaign 2 (27.1M → 7.2M) while maintaining strong volume (350 students). Applied proven strategy (broad targeting + solution-focused messaging) + implemented GA4 tracking + premium pricing model (1.4-1.6M vs 599k). Achieved 73x ROAS—a 451% improvement over Campaign 2.
+                </div>
+
+                <div class="learning-section">
+                    <span class="learning-title">🔥 Strategic Pivots</span>
+                    <div class="learning-content">
+                        <div class="learning-item positive">
+                            <div class="learning-item-label">Premium Positioning</div>
+                            <div class="learning-item-text">Product pricing: 1.4-1.6M per enrollment (vs 599k in previous campaigns). Higher-perceived value attracted more serious students. Lower volume but higher quality + revenue. 33% conversion rate vs 9.3% in Campaign 2.</div>
+                        </div>
+                        <div class="learning-item positive">
+                            <div class="learning-item-label">Traffic Campaigns as Pool Builder</div>
+                            <div class="learning-item-text">Ultra-cheap LPV campaigns (Rp 490 per landing page view) built massive retargeting pools. Then conversion campaigns targeted warm audience. Game changer for efficiency.</div>
+                        </div>
+                        <div class="learning-item positive">
+                            <div class="learning-item-label">Segmented Pain-Point Messaging</div>
+                            <div class="learning-item-text">Different messaging for Gap Year students (redemption narrative) vs Kelas 12 (proactive preparation). Relevance drove performance. Poster format outperformed video for premium context.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="learning-section">
+                    <span class="learning-title">✓ Critical Insights</span>
+                    <div class="learning-content">
+                        <div class="learning-item positive">
+                            <div class="learning-item-label">Creative Targeting > Audience Targeting</div>
+                            <div class="learning-item-text">In Meta 2025, broad audiences + highly differentiated creative beats narrow targeting. Let algorithm find buyers; focus on messaging resonance.</div>
+                        </div>
+                        <div class="learning-item positive">
+                            <div class="learning-item-label">Strategy Scales, Budget Doesn't</div>
+                            <div class="learning-item-text">Spent 73% LESS budget but achieved BETTER ROAS (13x → 73x). Proves that systematic optimization (audience insight + messaging resonance + content format) is more powerful than throwing money at the problem.</div>
+                        </div>
+                        <div class="learning-item positive">
+                            <div class="learning-item-label">Constraint Forces Efficiency</div>
+                            <div class="learning-item-text">Working under budget constraints forced peak efficiency. Lower budget = forced prioritization = only best-performing strategies survived = better ROAS.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="learning-section">
+                    <span class="learning-title">🔧 Implementation Details</span>
+                    <div class="learning-content">
+                        <div class="learning-item">
+                            <div class="learning-item-label">GA4 + Meta Pixel Double-Tracking</div>
+                            <div class="learning-item-text">Implemented GA4 mid-campaign (realized Meta Pixel alone had attribution limitations). Double-verification improved confidence in ROAS calculations. Validation: actual numbers matched projections.</div>
+                        </div>
+                        <div class="learning-item">
+                            <div class="learning-item-label">Brand Trust Compounding</div>
+                            <div class="learning-item-text">33% conversion rate (vs 9.3% baseline) proves brand trust from previous batches. Students knew SIMAKARA delivers results. Organic word-of-mouth reduced customer acquisition friction.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- INSIGHTS -->
+<section class="insights" id="insights">
+    <h2 class="section-title">Cross-Campaign Analysis & Insights</h2>
+
+    <h3 style="font-size: 24px; margin-bottom: 30px; color: var(--primary);">Campaign Progression: Learning → Scaling → Mastery</h3>
+    
+    <div class="insights-grid">
+        <div class="insight-card">
+            <h4>Campaign #1: Learning</h4>
+            <ul>
+                <li>First rodeo with paid ads</li>
+                <li>Testing everything</li>
+                <li>Building baseline</li>
+                <li>Feature-listing creative failed</li>
+            </ul>
+            <p style="margin-top: 20px; font-size: 16px;"><strong>Result:</strong> <span class="positive-metric">7.05x ROAS</span> - proved viability</p>
+        </div>
+        
+        <div class="insight-card">
+            <h4>Campaign #2: Scaling</h4>
+            <ul>
+                <li>Applied learnings at 3x budget</li>
+                <li>Simplified campaign structure</li>
+                <li>Breakthrough: teaching demos</li>
+                <li>Built retargeting sequences</li>
+            </ul>
+            <p style="margin-top: 20px; font-size: 16px;"><strong>Result:</strong> <span class="positive-metric">13.27x ROAS</span> - improved while scaling</p>
+        </div>
+        
+        <div class="insight-card">
+            <h4>Campaign #3: Mastery</h4>
+            <ul>
+                <li>Compound learnings from #1 & #2</li>
+                <li>Intentional budget constraint</li>
+                <li>Premium product positioning</li>
+                <li>Creative targeting strategy</li>
+            </ul>
+            <p style="margin-top: 20px; font-size: 16px;"><strong>Result:</strong> <span class="positive-metric">73.07x ROAS</span> - peak efficiency</p>
+        </div>
+    </div>
+
+    <h3 style="font-size: 24px; margin: 60px 0 30px; color: var(--primary);">Performance Comparison: Baseline vs Campaign Evolution</h3>
+    
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>Metric</th>
+                <th>Baseline</th>
+                <th>Campaign #1</th>
+                <th>Campaign #2</th>
+                <th>Campaign #3</th>
+                <th>Overall Change</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Period</strong></td>
+                <td>Mar-Jul '24</td>
+                <td>Dec '24 - Mar '25</td>
+                <td>Apr-Jun '25</td>
+                <td>Aug-Sep '25</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>Budget (IDR)</strong></td>
+                <td>63.8M</td>
+                <td>8.5M</td>
+                <td>27.1M</td>
+                <td>7.2M</td>
+                <td class="positive-metric">-33% total</td>
+            </tr>
+            <tr>
+                <td><strong>Product Price (IDR)</strong></td>
+                <td>399-599k</td>
+                <td>599k</td>
+                <td>599k</td>
+                <td>1.4-1.6M</td>
+                <td class="positive-metric">+150%</td>
+            </tr>
+            <tr>
+                <td><strong>Students</strong></td>
+                <td>861</td>
+                <td>~100</td>
+                <td>~600</td>
+                <td>~350</td>
+                <td>1,050 total</td>
+            </tr>
+            <tr>
+                <td><strong>Revenue (IDR)</strong></td>
+                <td>386.5M</td>
+                <td>59.9M</td>
+                <td>359.4M</td>
+                <td>525M</td>
+                <td>944.3M total</td>
+            </tr>
+            <tr>
+                <td><strong>ROAS</strong></td>
+                <td>6.05x</td>
+                <td class="positive-metric">7.05x</td>
+                <td class="positive-metric">13.27x</td>
+                <td class="positive-metric">73.07x</td>
+                <td class="positive-metric">+1,108%</td>
+            </tr>
+            <tr>
+                <td><strong>CAC (IDR)</strong></td>
+                <td>74k</td>
+                <td>85k</td>
+                <td class="positive-metric">45k</td>
+                <td class="positive-metric">21k</td>
+                <td class="positive-metric">-72%</td>
+            </tr>
+            <tr>
+                <td><strong>Conversion Rate</strong></td>
+                <td>-</td>
+                <td>7.2%</td>
+                <td>9.3%</td>
+                <td class="positive-metric">33%</td>
+                <td class="positive-metric">+358%</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 style="font-size: 24px; margin: 60px 0 30px; color: var(--primary);">Key Counter-Intuitive Findings</h3>
+    
+    <div class="insights-grid">
+        <div class="insight-card">
+            <h4>Budget Constraint → Higher Efficiency</h4>
+            <p style="color: var(--gray); line-height: 1.8; margin-top: 10px;">Campaign #3 used <strong>73% less budget</strong> than Campaign #2 but achieved <strong>451% better ROAS</strong> (13x → 73x). Lower budget forced prioritization and peak efficiency.</p>
+        </div>
+        
+        <div class="insight-card">
+            <h4>Premium Pricing → Better Conversion</h4>
+            <p style="color: var(--gray); line-height: 1.8; margin-top: 10px;"><strong>+150% price increase</strong> (599k → 1.4-1.6M) resulted in <strong>+255% conversion rate improvement</strong> (9.3% → 33%). Higher price = higher perceived value = more serious buyers.</p>
+        </div>
+        
+        <div class="insight-card">
+            <h4>Simplicity → Better Performance</h4>
+            <p style="color: var(--gray); line-height: 1.8; margin-top: 10px;">Fewer ad sets + broad targeting beats complex micro-segmentation. Meta's algorithm optimizes better with consolidated signal. <strong>Strategy > Complexity.</strong></p>
+        </div>
+    </div>
+
+    <h3 style="font-size: 24px; margin: 60px 0 30px; color: var(--primary);">Creative Evolution: The Biggest Learning</h3>
+    
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>Campaign</th>
+                <th>Creative Approach</th>
+                <th>Result</th>
+                <th>Learning</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>#1 (SKS)</strong></td>
+                <td>Feature-listing, product benefits, generic content</td>
+                <td class="negative-metric">&lt;1% CTR, high CPM</td>
+                <td class="negative-metric">❌ Selling features doesn't work</td>
+            </tr>
+            <tr>
+                <td><strong>#2 (SI SIMAK)</strong></td>
+                <td>Teaching demos, founder story, authentic methodology</td>
+                <td class="positive-metric">2.4x CTR, -31% CPM</td>
+                <td class="positive-metric">✅ Show > Tell works</td>
+            </tr>
+            <tr>
+                <td><strong>#3 (#FYP)</strong></td>
+                <td>Segmented pain-point messaging, problem-solution, testimonial posters</td>
+                <td class="positive-metric">33% conversion, 73x ROAS</td>
+                <td class="positive-metric">✅✅ Authenticity + relevance = peak performance</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="background: var(--light); padding: 30px; border-radius: 8px; border-left: 4px solid var(--accent); margin-top: 40px;">
+        <h4 style="font-size: 18px; margin-bottom: 15px; color: var(--primary);">💡 Key Insight</h4>
+        <p style="font-size: 16px; line-height: 1.8; color: var(--gray);">The shift from <strong>"selling features"</strong> → <strong>"demonstrating value"</strong> → <strong>"solving specific pain points"</strong> drove <span class="positive-metric">10x improvement</span> in creative performance and was the primary driver of ROAS growth from 7x to 73x.</p>
+    </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="methodology" id="methodology">
+    <h2 class="section-title">Methodology</h2>
+    
+    <div class="methodology-grid">
+        <div class="methodology-pillar">
+            <h3>
+                <span class="pillar-icon">1</span>
+                Channel Focus
+            </h3>
+            <p>Meta Ads only allocation. Tight budgets demand focus. Proven ROI on Meta meant strategic decision to deepen expertise rather than spread capital across untested channels. Mastery > Diversification in resource-constrained environments.</p>
+        </div>
+        
+        <div class="methodology-pillar">
+            <h3>
+                <span class="pillar-icon alt">2</span>
+                Targeting Strategy
+            </h3>
+            <p>Broad targeting signals > complex micro-funnels. Algorithmic optimization proved superior to manual segmentation (40%+ performance improvement). Trust Meta's algorithm; avoid over-engineering. Creative differentiation beats audience targeting in Meta 2025.</p>
+        </div>
+        
+        <div class="methodology-pillar">
+            <h3>
+                <span class="pillar-icon">3</span>
+                Messaging Framework
+            </h3>
+            <p>Solution-focused positioning: Problem → Your Approach → Proof. Address systemic pain points (not product features). Build credibility through understanding, not hard-sell. Segmented messaging for different audience contexts (Gap Year vs Kelas 12).</p>
+        </div>
+        
+        <div class="methodology-pillar">
+            <h3>
+                <span class="pillar-icon alt">4</span>
+                Content Format
+            </h3>
+            <p>Authentic tutor demos + editorial storytelling. Relatability over polish. Real teachers teaching. Show > Tell. Poster format for premium positioning. Weekender-style narratives addressing systemic problems without being salesy.</p>
+        </div>
+        
+        <div class="methodology-pillar">
+            <h3>
+                <span class="pillar-icon">5</span>
+                Tracking & Attribution
+            </h3>
+            <p>Meta Pixel + GA4 double-tracking. Single-source attribution has blind spots. Dual verification improves confidence in ROAS and enables better budget allocation decisions. Implemented mid-Campaign #3 when realized limitations.</p>
+        </div>
+        
+        <div class="methodology-pillar">
+            <h3>
+                <span class="pillar-icon alt">6</span>
+                Budget Philosophy
+            </h3>
+            <p>Efficiency over volume. Work under constraints. Proof: 73% less budget, better ROAS (13x → 73x). Strategic optimization scales better than budget increases. Constraint forces prioritization and peak efficiency.</p>
+        </div>
+
+        <div class="methodology-pillar">
+            <h3>
+                <span class="pillar-icon">7</span>
+                Sequential Funnel
+            </h3>
+            <p>Traffic campaigns build retargeting pools at ultra-low cost (Rp 490/LPV), then conversion campaigns target warm audience. Pool-building strategy was game changer for Campaign #3 efficiency.</p>
+        </div>
+
+        <div class="methodology-pillar">
+            <h3>
+                <span class="pillar-icon alt">8</span>
+                Compound Learning
+            </h3>
+            <p>Each campaign built on previous insights. Learning compounds; budget doesn't. Campaign #3 success came from applying lessons from #1 & #2. Systematic experimentation > starting fresh each time.</p>
+        </div>
+    </div>
+</section>
+
+<!-- TOOLS -->
+<section class="tools" id="tools">
+    <div class="tools-left">
+        <h2>Tools & Stack</h2>
+        <p>Industry-standard platforms for ads management, analytics, and campaign orchestration. Proficient in both technical implementation and strategic optimization. Emphasis on dual-tracking for attribution confidence.</p>
+    </div>
+    <div class="tools-grid">
+        <div class="tool-item">Meta Ads Manager</div>
+        <div class="tool-item alt">Google Analytics 4</div>
+        <div class="tool-item">Meta Pixel</div>
+        <div class="tool-item alt">Google Tag Manager</div>
+        <div class="tool-item">Google Sheets</div>
+        <div class="tool-item alt">Campaign Analytics</div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2025 Muhammad Razaan Azra Gunawan | CMO at SIMAKARA</p>
+    <p style="margin-top: 10px; opacity: 0.8;">Campaign Period: Dec 2024 - Sep 2025 | 1,050 Students | Rp 944.3M Revenue | 73x Peak ROAS</p>
+    <p style="margin-top: 15px;"><a href="https://linkedin.com/in/razaanazra" target="_blank" style="color: white; text-decoration: underline;">linkedin.com/in/razaanazra</a></p>
+</footer>
+
+</body>
+</html>
